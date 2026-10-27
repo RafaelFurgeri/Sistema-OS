@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sigasec OS — Ordens de Serviço e Orçamentos</title>
+  <meta name="description" content="Sistema minimalista de Ordens de Serviço e Orçamentos da Sigasec IT Consulting: clientes, equipamentos, diagnóstico, peças com margem de lucro, serviços e PDF.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Top banner de ponta a ponta no alto superior da tela -->
+    <header class="app-header">
+      <div class="top-banner">
+        <div class="banner-inner">
+          <div class="brand-logo" id="brand-logo"></div>
+          <div class="banner-info">
+            <div class="banner-title">SIGASEC IT CONSULTING</div>
+            <div class="banner-sub" id="banner-foot">Rua Padre Antonio de Souza Lima, 140, sala 05 &bull; suporte@sigasec.com.br</div>
+          </div>
+          <div class="banner-actions">
+            <a class="banner-cta" href="#/nova">
+              <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              <span>+ Nova OS / Orçamento</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu OS horizontal minimalista -->
+      <nav class="nav-bar" id="nav" aria-label="Menu principal"></nav>
+    </header>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Sigasec OS</h1>
+          <p id="page-sub"></p>
+        </div>
+        <div class="topbar-actions" id="topbar-actions"></div>
+      </header>
+      <section class="content" id="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+  <div id="print-area"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/print.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

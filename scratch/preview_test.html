@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview PDF A4 - Sigasec OS</title>
+  <link rel="stylesheet" href="../css/print.css">
+  <style>
+    /* Simulação de folha A4 no navegador para testes visuais */
+    body {
+      background: #33363f;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+    #print-area {
+      display: block !important;
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      padding: 8mm 9mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="print-area">
+    <div class="doc">
+      <!-- 1. Topo: Banner elegante de ponta a ponta com logo integrada -->
+      <header class="doc-header">
+        <div class="doc-banner-full">
+          <div class="doc-banner-logo">
+            <img src="../assets/logo.png" alt="Sigasec IT Consulting">
+          </div>
+          <div class="doc-banner-company">
+            <h1 class="doc-company-name">SIGASEC IT CONSULTING</h1>
+            <div class="doc-company-details">
+              <span class="doc-meta-item">Rua Padre Antonio de Souza Lima, 140, sala 05</span>
+              <span class="doc-meta-item">(11) 98765-4321 &bull; suporte@sigasec.com.br</span>
+              <span class="doc-meta-item">São Paulo - SP &bull; CNPJ: 12.345.678/0001-90 &bull; www.sigasec.com.br</span>
+            </div>
+          </div>
+          <div class="doc-banner-badge">
+            <span class="doc-badge-type">ORDEM DE SERVIÇO</span>
+            <span class="doc-badge-num">Nº 000128</span>
+            <span class="doc-badge-meta">Emissão: 26/10/2026</span>
+            <span class="doc-badge-status">Em execução</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. Estrutura em 2 Colunas Paralelas: Cliente & Equipamento -->
+      <div class="doc-two-cols">
+        <!-- Coluna 1: Dados do Cliente -->
+        <div class="doc-card">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>DADOS DO CLIENTE</span>
+          </div>
+          <div class="doc-card-body doc-grid-body">
+            <div class="doc-cell full">
+              <span class="doc-lbl">CLIENTE / RAZÃO SOCIAL</span>
+              <span class="doc-val bold doc-val-primary">Tech Solutions & Consultoria Ltda</span>
+            </div>
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">CPF / CNPJ</span>
+                <span class="doc-val">28.491.029/0001-44</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">TELEFONE / WHATSAPP</span>
+                <span class="doc-val">(11) 99123-4567 / (11) 3210-9876</span>
+              </div>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">E-MAIL DE CONTATO</span>
+              <span class="doc-val">financeiro@techsolutions.com.br</span>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">ENDEREÇO COMPLETO</span>
+              <span class="doc-val">Av. Paulista, 1500, Sala 82 — Bela Vista — São Paulo/SP — CEP 01310-200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Dados do Equipamento & Prazos -->
+        <div class="doc-card">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>DADOS DO EQUIPAMENTO &amp; PRAZOS</span>
+          </div>
+          <div class="doc-card-body doc-grid-body">
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">EQUIPAMENTO / MARCA</span>
+                <span class="doc-val bold">Notebook &bull; Dell</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">MODELO</span>
+                <span class="doc-val bold">Latitude 5420</span>
+              </div>
+            </div>
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">Nº DE SÉRIE / SERVICE TAG</span>
+                <span class="doc-val mono bold doc-highlight-val">BR-849204-KL</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">TÉCNICO RESPONSÁVEL</span>
+                <span class="doc-val">Carlos Eduardo</span>
+              </div>
+            </div>
+            <div class="doc-cell-group g3 doc-dates-group">
+              <div class="doc-cell">
+                <span class="doc-lbl">ENTRADA</span>
+                <span class="doc-val">24/10/2026</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">PREVISÃO</span>
+                <span class="doc-val">28/10/2026</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">SAÍDA / CONCLUSÃO</span>
+                <span class="doc-val">—</span>
+              </div>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">ACESSÓRIOS &amp; CONDIÇÕES DE ENTRADA</span>
+              <span class="doc-val">Fonte original Dell 65W, bolsa de transporte | Estado: Riscos leves na tampa traseira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Diagnóstico e Serviço Técnico -->
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>LAUDO TÉCNICO &amp; DETALHAMENTO</span>
+        </div>
+        <div class="doc-card-body doc-diag-container">
+          <div class="doc-diag-block">
+            <div class="doc-diag-head">
+              <span class="doc-diag-bullet"></span>
+              <span class="doc-diag-label">PROBLEMA INFORMADO PELO CLIENTE</span>
+            </div>
+            <div class="doc-diag-content">Equipamento não liga após oscilação na rede elétrica do escritório. Led indicador de carga pisca intermitente na cor laranja e apaga.</div>
+          </div>
+          <div class="doc-diag-block">
+            <div class="doc-diag-head">
+              <span class="doc-diag-bullet"></span>
+              <span class="doc-diag-label">CONSTATAÇÃO / DIAGNÓSTICO TÉCNICO</span>
+            </div>
+            <div class="doc-diag-content">Identificado curto-circuito na linha primária de alimentação de 19V do circuito regulador DC-DC da placa-mãe. Dois capacitores cerâmicos rompidos e pasta térmica do processador ressecada.</div>
+          </div>
+          <div class="doc-diag-block">
+            <div class="doc-diag-head">
+              <span class="doc-diag-bullet"></span>
+              <span class="doc-diag-label">SERVIÇOS &amp; SOLUÇÃO EXECUTADA</span>
+            </div>
+            <div class="doc-diag-content">Reparo avançado em microeletrônica da placa-mãe (desoxidação e substituição dos componentes SMD avariados), aplicação de pasta térmica de prata de alta condutividade e testes de estresse por 6 horas contínuas.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Tabelas de Itens -->
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>PEÇAS E MATERIAIS UTILIZADOS</span>
+        </div>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th style="width:28px" class="c">#</th>
+              <th>DESCRIÇÃO DO ITEM / PEÇA</th>
+              <th style="width:45px" class="c">QTD</th>
+              <th style="width:110px" class="r">VALOR UNIT.</th>
+              <th style="width:110px" class="r">SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c text-muted">1</td>
+              <td class="bold">Kit Capacitores Cerâmicos SMD 10uF 25V (Grade Automotiva)</td>
+              <td class="c">2</td>
+              <td class="r">R$ 25,00</td>
+              <td class="r bold">R$ 50,00</td>
+            </tr>
+            <tr>
+              <td class="c text-muted">2</td>
+              <td class="bold">Pasta Térmica Arctic Silver 5 de Alta Densidade</td>
+              <td class="c">1</td>
+              <td class="r">R$ 45,00</td>
+              <td class="r bold">R$ 45,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="r doc-tfoot-lbl">SUBTOTAL PEÇAS:</td>
+              <td class="r doc-tfoot-val">R$ 95,00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>SERVIÇOS ESPECIALIZADOS PRESTADOS</span>
+        </div>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th style="width:28px" class="c">#</th>
+              <th>DESCRIÇÃO DO SERVIÇO</th>
+              <th style="width:45px" class="c">QTD</th>
+              <th style="width:110px" class="r">VALOR UNIT.</th>
+              <th style="width:110px" class="r">SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c text-muted">1</td>
+              <td class="bold">Reparo eletrônico avançado em placa-mãe (circuito primário DC-DC)</td>
+              <td class="c">1</td>
+              <td class="r">R$ 380,00</td>
+              <td class="r bold">R$ 380,00</td>
+            </tr>
+            <tr>
+              <td class="c text-muted">2</td>
+              <td class="bold">Manutenção preventiva completa, limpeza por ultrassom e troca de composto térmico</td>
+              <td class="c">1</td>
+              <td class="r">R$ 120,00</td>
+              <td class="r bold">R$ 120,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="r doc-tfoot-lbl">SUBTOTAL SERVIÇOS:</td>
+              <td class="r doc-tfoot-val">R$ 500,00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- 5. Fechamento Comercial & Totais -->
+      <div class="doc-closure">
+        <div class="doc-terms-side">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>CONDIÇÕES COMERCIAIS &amp; GARANTIA</span>
+          </div>
+          <div class="doc-closure-info">
+            <div class="doc-terms-chips">
+              <div class="doc-term-chip">
+                <span class="doc-term-k">FORMA DE PAGAMENTO:</span>
+                <span class="doc-term-v">Pix ou Cartão em até 3x sem juros</span>
+              </div>
+              <div class="doc-term-chip">
+                <span class="doc-term-k">PRAZO DE GARANTIA:</span>
+                <span class="doc-term-v">90 dias nos serviços e peças</span>
+              </div>
+            </div>
+            <div class="doc-closure-obs">
+              <span class="doc-lbl">OBSERVAÇÕES:</span>
+              <p>Equipamento entregue higienizado e lacrado com selo de segurança Sigasec. Bateria com saúde em 92%.</p>
+            </div>
+            <div class="doc-legal-terms">
+              <span class="doc-legal-title">TERMOS GERAIS DE GARANTIA:</span>
+              <p>A garantia não cobre danos causados por mau uso, quedas, contato com líquidos, oscilações elétricas ou violação do lacre de segurança. Equipamentos não retirados em até 90 dias após notificação estarão sujeitos a taxa de armazenagem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-totals-side">
+          <div class="doc-totals-title">RESUMO FINANCEIRO</div>
+          <div class="doc-tot-row">
+            <span>Subtotal Peças:</span>
+            <b>R$ 95,00</b>
+          </div>
+          <div class="doc-tot-row">
+            <span>Subtotal Serviços:</span>
+            <b>R$ 500,00</b>
+          </div>
+          <div class="doc-tot-row discount">
+            <span>Desconto Concedido:</span>
+            <b>- R$ 45,00</b>
+          </div>
+          <div class="doc-tot-grand">
+            <span class="doc-grand-lbl">VALOR TOTAL A PAGAR</span>
+            <span class="doc-grand-val">R$ 550,00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Assinaturas Formais -->
+      <div class="doc-sign-wrapper">
+        <div class="doc-acceptance-clause">
+          Declaro ter recebido o equipamento acima discriminado em perfeitas condições de funcionamento e conferência, estando de acordo com os serviços prestados e peças aplicadas.
+        </div>
+        <div class="doc-date-city">
+          São Paulo - SP, 26 de Outubro de 2026
+        </div>
+        <div class="doc-sign-boxes">
+          <div class="doc-sign-box">
+            <div class="doc-sign-line"></div>
+            <span class="doc-sign-name">Tech Solutions & Consultoria Ltda</span>
+            <span class="doc-sign-sub">CPF/CNPJ: 28.491.029/0001-44</span>
+          </div>
+          <div class="doc-sign-box">
+            <div class="doc-sign-line"></div>
+            <span class="doc-sign-name">Sigasec IT Consulting</span>
+            <span class="doc-sign-sub">Carlos Eduardo &bull; Responsável Técnico</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Rodapé -->
+      <footer class="doc-page-footer">
+        <span>Sigasec IT Consulting &bull; Rua Padre Antonio de Souza Lima, 140, sala 05 &bull; suporte@sigasec.com.br</span>
+        <span>Ordem de Serviço Nº 000128 &bull; Documento emitido em 26/10/2026 às 15:30</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

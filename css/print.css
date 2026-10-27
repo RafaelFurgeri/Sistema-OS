@@ -1,0 +1,548 @@
+/* =========================================================
+   Sigasec OS — Layout de Impressão / PDF (A4)
+   Design Executivo, Moderno, Organizado e Sem Elementos Supérfluos
+   ========================================================= */
+
+#print-area { display: none; }
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 8mm;
+  }
+  html, body {
+    background: #ffffff !important;
+    height: auto;
+    color: #0f172a !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  /* Oculta tudo na tela durante a impressão, exceto a folha do PDF */
+  body > *:not(#print-area) { display: none !important; }
+  .app, #modal-root, #toast-root, #action-bar, .action-bar { display: none !important; }
+  #print-area { display: block !important; }
+}
+
+.doc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  font-size: 8.5px;
+  line-height: 1.35;
+  background: #ffffff;
+  max-width: 100%;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.doc * { box-sizing: border-box; }
+
+/* 1. Topo: Banner elegante de ponta a ponta com logo integrada */
+.doc-header {
+  margin-bottom: 7px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.doc-banner-full {
+  width: 100%;
+  background: #636361; /* Cor de fundo original da logo Sigasec */
+  border-radius: 4px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 3px solid #ff6b00;
+}
+
+.doc-banner-logo {
+  display: flex;
+  align-items: center;
+}
+.doc-banner-logo img {
+  height: 52px;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.doc-banner-company {
+  flex: 1;
+  color: #ffffff;
+}
+.doc-company-name {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 2px;
+  color: #ffffff;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+.doc-company-details {
+  font-size: 8px;
+  color: #f1f5f9;
+  line-height: 1.35;
+}
+.doc-meta-item {
+  display: block;
+}
+
+.doc-banner-badge {
+  background: #18191d;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 6px 14px;
+  text-align: right;
+  min-width: 150px;
+}
+.doc-banner-badge.orc {
+  border-color: #ea580c;
+}
+.doc-badge-type {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #ff6b00;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.doc-banner-badge.orc .doc-badge-type {
+  color: #ea580c;
+}
+.doc-badge-num {
+  display: block;
+  font-size: 17px;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+.doc-badge-meta {
+  display: block;
+  font-size: 8px;
+  color: #cbd5e1;
+}
+.doc-badge-status {
+  display: inline-block;
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2b2d35;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1px 6px;
+  border-radius: 2px;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+/* 2. Estrutura em 2 Colunas Paralelas: Cliente & Equipamento */
+.doc-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  overflow: hidden;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.doc-card-title {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 4.5px 8px;
+  border-bottom: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.doc-title-bar {
+  width: 3px;
+  height: 10px;
+  background: #ff6b00;
+  border-radius: 1px;
+  display: inline-block;
+}
+.doc-card-body {
+  padding: 6px 8px;
+  font-size: 8.5px;
+  line-height: 1.35;
+  flex: 1;
+}
+.doc-grid-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5px;
+}
+
+.doc-cell {
+  display: flex;
+  flex-direction: column;
+}
+.doc-cell.full {
+  width: 100%;
+}
+.doc-cell-group {
+  display: grid;
+  gap: 6px;
+}
+.doc-cell-group.g2 { grid-template-columns: 1fr 1fr; }
+.doc-cell-group.g3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.doc-lbl {
+  display: block;
+  font-size: 7.2px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1px;
+}
+.doc-val {
+  display: block;
+  font-size: 8.5px;
+  color: #0f172a;
+  line-height: 1.25;
+}
+.doc-val.bold {
+  font-weight: 700;
+}
+.doc-val.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: .02em;
+}
+.doc-val-primary {
+  font-size: 9.5px;
+  color: #0f172a;
+  font-weight: 700;
+}
+.doc-highlight-val {
+  background: #f8fafc;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid #e2e8f0;
+  display: inline-block;
+}
+
+/* 3. Diagnóstico e Serviços Técnicos */
+.doc-diag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.doc-diag-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #ff6b00;
+  border-radius: 3px;
+  padding: 4.5px 8px;
+}
+.doc-diag-head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+.doc-diag-bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff6b00;
+  display: inline-block;
+}
+.doc-diag-label {
+  font-size: 7.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #334155;
+  letter-spacing: .04em;
+}
+.doc-diag-content {
+  font-size: 8.5px;
+  color: #0f172a;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* 4. Tabelas de Itens (Peças e Serviços) */
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5px;
+}
+.doc-table th {
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-bottom: 1px solid #cbd5e1;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 7.8px;
+  letter-spacing: .04em;
+}
+.doc-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+.doc-table tbody tr:nth-child(even) td {
+  background: #fafbfc;
+}
+.doc-table tr:last-child td {
+  border-bottom: none;
+}
+.doc-table tfoot td {
+  background: #f8fafc;
+  font-weight: 700;
+  border-top: 1px solid #cbd5e1;
+  padding: 4px 8px;
+}
+.doc-tfoot-lbl {
+  text-transform: uppercase;
+  font-size: 8px;
+  color: #475569;
+  letter-spacing: .04em;
+}
+.doc-tfoot-val {
+  font-size: 9px;
+  font-weight: 800;
+  color: #0f172a;
+}
+.doc-table .c { text-align: center; }
+.doc-table .r { text-align: right; font-variant-numeric: tabular-nums; }
+.doc-table .bold { font-weight: 700; }
+.doc-table .text-muted { color: #94a3b8; }
+
+/* 5. Fechamento Comercial & Totais */
+.doc-closure {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 7px;
+  margin-bottom: 7px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.doc-terms-side {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.doc-closure-info {
+  padding: 6px 8px;
+  flex: 1;
+  font-size: 8px;
+}
+.doc-terms-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.doc-term-chip {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+.doc-term-k {
+  display: block;
+  font-size: 7px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.doc-term-v {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1px;
+}
+.doc-validity-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 7.5px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.doc-closure-obs {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  padding: 3px 6px;
+  margin-bottom: 4px;
+}
+.doc-closure-obs p {
+  margin: 2px 0 0;
+  font-size: 8px;
+  color: #1e293b;
+  white-space: pre-wrap;
+  line-height: 1.3;
+}
+.doc-legal-terms {
+  font-size: 7px;
+  color: #64748b;
+  line-height: 1.3;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 3px;
+}
+.doc-legal-title {
+  font-weight: 700;
+  color: #475569;
+  display: block;
+  margin-bottom: 1px;
+}
+.doc-legal-terms p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.doc-totals-side {
+  border: 1px solid #0f172a;
+  border-radius: 4px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.doc-totals-title {
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: 4.5px 8px;
+  text-align: center;
+}
+.doc-tot-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  font-size: 8.5px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+.doc-tot-row b {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: #0f172a;
+}
+.doc-tot-row.discount b {
+  color: #dc2626;
+}
+.doc-tot-grand {
+  margin-top: auto;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.doc-tot-grand.orc {
+  background: #ea580c;
+}
+.doc-grand-lbl {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #cbd5e1;
+}
+.doc-tot-grand.orc .doc-grand-lbl {
+  color: #ffedd5;
+}
+.doc-grand-val {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+/* 6. Assinaturas Formais e Aceite */
+.doc-sign-wrapper {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.doc-acceptance-clause {
+  font-size: 7.2px;
+  color: #475569;
+  text-align: justify;
+  line-height: 1.35;
+  padding: 3.5px 6px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.doc-date-city {
+  text-align: right;
+  font-size: 7.5px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.doc-sign-boxes {
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+}
+.doc-sign-box {
+  flex: 1;
+  max-width: 250px;
+  text-align: center;
+}
+.doc-sign-line {
+  border-top: 1px solid #0f172a;
+  margin-bottom: 3px;
+}
+.doc-sign-name {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.doc-sign-sub {
+  display: block;
+  font-size: 7.5px;
+  color: #64748b;
+}
+
+/* 7. Rodapé */
+.doc-page-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 3px;
+  font-size: 7px;
+  color: #94a3b8;
+  margin-top: 4px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+  <div class="app">
+    <h1>App Shell</h1>
+  </div>
+
+  <!-- Barra fixa que aparecia indevidamente -->
+  <div class="action-bar" id="action-bar">
+    <div class="ab-stat"><small>Produtos</small><b>R$ 448,50</b></div>
+    <div class="ab-stat"><small>Serviços</small><b>R$ 0,00</b></div>
+    <div class="sep"></div>
+    <div class="ab-stat ab-total"><small>Total</small><b>R$ 448,50</b></div>
+    <div class="ab-actions">
+      <button class="btn" id="btn-finalizar">Finalizar</button>
+      <button class="btn" id="btn-salvar-imprimir">Salvar e gerar PDF</button>
+      <button class="btn btn-primary" id="btn-salvar">Salvar alterações</button>
+    </div>
+  </div>
+
+  <!-- Área do documento PDF -->
+  <div id="print-area">
+    <div class="doc">
+      <header class="doc-header">
+        <div class="doc-banner-full">
+          <div class="doc-banner-company">
+            <h1 class="doc-company-name">SIGASEC IT CONSULTING</h1>
+          </div>
+          <div class="doc-banner-badge">
+            <span class="doc-badge-type">ORDEM DE SERVIÇO</span>
+            <span class="doc-badge-num">Nº 000128</span>
+          </div>
+        </div>
+      </header>
+      <div style="padding:20px;text-align:center;font-size:14px">
+        Documento de teste - A barra de ações inferior NÃO pode aparecer aqui!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

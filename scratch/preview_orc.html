@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview Orçamento A4 - Sigasec OS</title>
+  <link rel="stylesheet" href="../css/print.css">
+  <style>
+    body {
+      background: #33363f;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+    #print-area {
+      display: block !important;
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      padding: 8mm 9mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="print-area">
+    <div class="doc">
+      <!-- 1. Topo: Banner elegante de ponta a ponta com logo integrada -->
+      <header class="doc-header">
+        <div class="doc-banner-full">
+          <div class="doc-banner-logo">
+            <img src="../assets/logo.png" alt="Sigasec IT Consulting">
+          </div>
+          <div class="doc-banner-company">
+            <h1 class="doc-company-name">SIGASEC IT CONSULTING</h1>
+            <div class="doc-company-details">
+              <span class="doc-meta-item">Rua Padre Antonio de Souza Lima, 140, sala 05</span>
+              <span class="doc-meta-item">(11) 98765-4321 &bull; suporte@sigasec.com.br</span>
+              <span class="doc-meta-item">São Paulo - SP &bull; CNPJ: 12.345.678/0001-90 &bull; www.sigasec.com.br</span>
+            </div>
+          </div>
+          <div class="doc-banner-badge orc">
+            <span class="doc-badge-type">PROPOSTA / ORÇAMENTO</span>
+            <span class="doc-badge-num">Nº 000129</span>
+            <span class="doc-badge-meta">Emissão: 26/10/2026</span>
+            <span class="doc-badge-status">Aguardando aprovação</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. Estrutura em 2 Colunas Paralelas: Cliente & Equipamento -->
+      <div class="doc-two-cols">
+        <!-- Coluna 1: Dados do Cliente -->
+        <div class="doc-card">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>DADOS DO CLIENTE</span>
+          </div>
+          <div class="doc-card-body doc-grid-body">
+            <div class="doc-cell full">
+              <span class="doc-lbl">CLIENTE / RAZÃO SOCIAL</span>
+              <span class="doc-val bold doc-val-primary">Dra. Mariana Vasconcellos</span>
+            </div>
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">CPF / CNPJ</span>
+                <span class="doc-val">341.829.102-88</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">TELEFONE / WHATSAPP</span>
+                <span class="doc-val">(11) 98455-1234</span>
+              </div>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">E-MAIL DE CONTATO</span>
+              <span class="doc-val">mariana.clinica@gmail.com</span>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">ENDEREÇO COMPLETO</span>
+              <span class="doc-val">Rua Oscar Freire, 920, Apto 112 — Jardins — São Paulo/SP — CEP 01426-001</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Dados do Equipamento & Prazos -->
+        <div class="doc-card">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>DADOS DO EQUIPAMENTO &amp; PRAZOS</span>
+          </div>
+          <div class="doc-card-body doc-grid-body">
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">EQUIPAMENTO / MARCA</span>
+                <span class="doc-val bold">All-in-One &bull; Apple</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">MODELO</span>
+                <span class="doc-val bold">iMac 24&quot; M1 16GB</span>
+              </div>
+            </div>
+            <div class="doc-cell-group g2">
+              <div class="doc-cell">
+                <span class="doc-lbl">Nº DE SÉRIE / SERVICE TAG</span>
+                <span class="doc-val mono bold doc-highlight-val">C02G8940Q16M</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">TÉCNICO RESPONSÁVEL</span>
+                <span class="doc-val">Felipe Ramos</span>
+              </div>
+            </div>
+            <div class="doc-cell-group g3 doc-dates-group">
+              <div class="doc-cell">
+                <span class="doc-lbl">ENTRADA</span>
+                <span class="doc-val">26/10/2026</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">PREVISÃO</span>
+                <span class="doc-val">30/10/2026</span>
+              </div>
+              <div class="doc-cell">
+                <span class="doc-lbl">SAÍDA / CONCLUSÃO</span>
+                <span class="doc-val">—</span>
+              </div>
+            </div>
+            <div class="doc-cell full">
+              <span class="doc-lbl">ACESSÓRIOS &amp; CONDIÇÕES DE ENTRADA</span>
+              <span class="doc-val">Fonte externa e cabo magnético original | Estado: Excelente estado, sem riscos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Diagnóstico e Serviço Técnico -->
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>LAUDO TÉCNICO &amp; DETALHAMENTO</span>
+        </div>
+        <div class="doc-card-body doc-diag-container">
+          <div class="doc-diag-block">
+            <div class="doc-diag-head">
+              <span class="doc-diag-bullet"></span>
+              <span class="doc-diag-label">PROBLEMA INFORMADO PELO CLIENTE</span>
+            </div>
+            <div class="doc-diag-content">Armazenamento interno de 256GB saturado impedindo atualizações do macOS. Necessita de upgrade para SSD NVMe de alta velocidade e backup integral dos prontuários.</div>
+          </div>
+          <div class="doc-diag-block">
+            <div class="doc-diag-head">
+              <span class="doc-diag-bullet"></span>
+              <span class="doc-diag-label">CONSTATAÇÃO / DIAGNÓSTICO TÉCNICO</span>
+            </div>
+            <div class="doc-diag-content">Avaliado integridade do sistema operacional e compatibilidade de expansão via porta Thunderbolt 4 de 40Gbps com gabinete blindado e SSD NVMe Gen4 de 2TB.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Tabelas de Itens -->
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>PEÇAS E MATERIAIS UTILIZADOS</span>
+        </div>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th style="width:28px" class="c">#</th>
+              <th>DESCRIÇÃO DO ITEM / PEÇA</th>
+              <th style="width:45px" class="c">QTD</th>
+              <th style="width:110px" class="r">VALOR UNIT.</th>
+              <th style="width:110px" class="r">SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c text-muted">1</td>
+              <td class="bold">SSD NVMe Kingston KC3000 2TB PCIe 4.0 (7000MB/s)</td>
+              <td class="c">1</td>
+              <td class="r">R$ 980,00</td>
+              <td class="r bold">R$ 980,00</td>
+            </tr>
+            <tr>
+              <td class="c text-muted">2</td>
+              <td class="bold">Gabinete Externo Thunderbolt 4 / USB4 em Alumínio Aeroespacial</td>
+              <td class="c">1</td>
+              <td class="r">R$ 490,00</td>
+              <td class="r bold">R$ 490,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="r doc-tfoot-lbl">SUBTOTAL PEÇAS:</td>
+              <td class="r doc-tfoot-val">R$ 1.470,00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="doc-card" style="margin-bottom:7px">
+        <div class="doc-card-title">
+          <span class="doc-title-bar"></span>
+          <span>SERVIÇOS ESPECIALIZADOS PRESTADOS</span>
+        </div>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th style="width:28px" class="c">#</th>
+              <th>DESCRIÇÃO DO SERVIÇO</th>
+              <th style="width:45px" class="c">QTD</th>
+              <th style="width:110px" class="r">VALOR UNIT.</th>
+              <th style="width:110px" class="r">SUBTOTAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c text-muted">1</td>
+              <td class="bold">Migração completa de dados com clone bit a bit e integridade de licenças Apple</td>
+              <td class="c">1</td>
+              <td class="r">R$ 350,00</td>
+              <td class="r bold">R$ 350,00</td>
+            </tr>
+            <tr>
+              <td class="c text-muted">2</td>
+              <td class="bold">Configuração de rotina automatizada de backup Time Machine criptografado</td>
+              <td class="c">1</td>
+              <td class="r">R$ 150,00</td>
+              <td class="r bold">R$ 150,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="r doc-tfoot-lbl">SUBTOTAL SERVIÇOS:</td>
+              <td class="r doc-tfoot-val">R$ 500,00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- 5. Fechamento Comercial & Totais -->
+      <div class="doc-closure">
+        <div class="doc-terms-side">
+          <div class="doc-card-title">
+            <span class="doc-title-bar"></span>
+            <span>CONDIÇÕES COMERCIAIS &amp; GARANTIA</span>
+          </div>
+          <div class="doc-closure-info">
+            <div class="doc-terms-chips">
+              <div class="doc-term-chip">
+                <span class="doc-term-k">FORMA DE PAGAMENTO:</span>
+                <span class="doc-term-v">50% no aceite e 50% na entrega</span>
+              </div>
+              <div class="doc-term-chip">
+                <span class="doc-term-k">PRAZO DE GARANTIA:</span>
+                <span class="doc-term-v">1 ano peças / 90 dias serviços</span>
+              </div>
+            </div>
+            <div class="doc-validity-box">
+              <strong>Validade da Proposta:</strong> Este orçamento é válido por 7 dias corridos a partir da data de emissão.
+            </div>
+            <div class="doc-legal-terms">
+              <span class="doc-legal-title">TERMOS GERAIS DA PROPOSTA:</span>
+              <p>Os valores e prazos indicados estão condicionados à disponibilidade dos componentes no fornecedor e à aprovação formal dentro do prazo de validade desta proposta.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-totals-side">
+          <div class="doc-totals-title">RESUMO FINANCEIRO</div>
+          <div class="doc-tot-row">
+            <span>Subtotal Peças:</span>
+            <b>R$ 1.470,00</b>
+          </div>
+          <div class="doc-tot-row">
+            <span>Subtotal Serviços:</span>
+            <b>R$ 500,00</b>
+          </div>
+          <div class="doc-tot-row discount">
+            <span>Desconto Comercial:</span>
+            <b>- R$ 70,00</b>
+          </div>
+          <div class="doc-tot-grand orc">
+            <span class="doc-grand-lbl">TOTAL DO ORÇAMENTO</span>
+            <span class="doc-grand-val">R$ 1.900,00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Assinaturas Formais -->
+      <div class="doc-sign-wrapper">
+        <div class="doc-acceptance-clause">
+          Autorizo a execução dos serviços e o fornecimento de peças acima discriminados conforme os valores, prazos e condições comerciais descritos nesta proposta.
+        </div>
+        <div class="doc-date-city">
+          São Paulo - SP, 26 de Outubro de 2026
+        </div>
+        <div class="doc-sign-boxes">
+          <div class="doc-sign-box">
+            <div class="doc-sign-line"></div>
+            <span class="doc-sign-name">Dra. Mariana Vasconcellos</span>
+            <span class="doc-sign-sub">CPF/CNPJ: 341.829.102-88</span>
+          </div>
+          <div class="doc-sign-box">
+            <div class="doc-sign-line"></div>
+            <span class="doc-sign-name">Sigasec IT Consulting</span>
+            <span class="doc-sign-sub">Felipe Ramos &bull; Consultor Responsável</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Rodapé -->
+      <footer class="doc-page-footer">
+        <span>Sigasec IT Consulting &bull; Rua Padre Antonio de Souza Lima, 140, sala 05 &bull; suporte@sigasec.com.br</span>
+        <span>Orçamento Nº 000129 &bull; Documento emitido em 26/10/2026 às 15:35</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
